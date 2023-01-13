@@ -6,10 +6,7 @@ import { Countdown, TimerTimeout } from './countdown.js';
 
 events.EventButtonPlay(Controls, Countdown);
 
-Controls.buttonPause.addEventListener('click', () => {
-  Controls.pause();
-  clearTimeout(TimerTimeout);
-});
+events.EventButtonPause(Controls,TimerTimeout);
 
 Controls.buttonStop.addEventListener('click', () => {
   Controls.resetControls();

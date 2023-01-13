@@ -17,3 +17,10 @@ export const EventButtonPlay = (controls, countdown) => {
     countdown.countdown();
   });
 };
+
+export const EventButtonPause = (controls, timerTimeout) => {
+  return controls.buttonPause.addEventListener('click', () => {
+    controls.pause();
+    clearTimeout(timerTimeout);
+  });
+};
