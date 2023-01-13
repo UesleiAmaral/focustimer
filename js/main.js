@@ -1,12 +1,18 @@
-import * as events from './events.js';
-
 import { Controls } from './controls.js';
 import { Sound } from './sound.js';
 import { Countdown, TimerTimeout } from './countdown.js';
 
-events.EventButtonPlay(Controls, Countdown);
+Controls.buttonPlay.addEventListener('click', () => {
+  Controls.play();
+  Controls.stop();
 
-events.EventButtonPause(Controls,TimerTimeout);
+  Countdown.countdown();
+});
+
+Controls.buttonPause.addEventListener('click', () => {
+  Controls.pause();
+  clearTimeout(TimerTimeout);
+});
 
 Controls.buttonStop.addEventListener('click', () => {
   Controls.resetControls();
@@ -17,5 +23,10 @@ Controls.buttonSet.addEventListener('click', () => {
   Controls.setTime();
 });
 
-events.EventSoundOn(Sound);
-events.EventSoundOff(Sound);
+Sound.buttonSoundOn.addEventListener('click', () => {
+  Sound.soundOn();
+});
+
+Sound.buttonSoundOff.addEventListener('click', () => {
+  Sound.soundOff();
+});
