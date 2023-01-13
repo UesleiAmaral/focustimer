@@ -40,3 +40,5 @@ Sound.buttonSoundOff.addEventListener('click', () => {
   Sound.soundOff();
 
 });
+
+console.log("ola")
